@@ -7,7 +7,9 @@ using WebActivatorEx;
 using restEx;
 using Swashbuckle.Application;
 
+#if DEBUG
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
+#endif
 
 namespace restEx
 {
@@ -15,7 +17,6 @@ namespace restEx
     {
         public static void Register()
         {
-            return;
             var thisAssembly = typeof(SwaggerConfig).Assembly;
 
             GlobalConfiguration.Configuration 
